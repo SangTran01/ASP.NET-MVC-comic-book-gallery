@@ -24,6 +24,7 @@ namespace ComicBookGallery.Controllers
                 new Artist("Colors", "Edgar Delgado"),
                 new Artist("Letters","Chris Eliopoulos")
             };
+            comicBook.Favorite = false;
 
             return View(comicBook);
         }
