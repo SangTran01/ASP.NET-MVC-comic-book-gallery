@@ -1,7 +1,23 @@
-﻿@{
+﻿@model ComicBookGallery.Models.ComicBook[]
+
+@{
+    //NO NEED TO ADD THIS _ViewStart file was created in Views when this index file was created.
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Comic Books";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
+
+@foreach (var comic in Model)
+{
+    <div class="row">
+        <div class="col-md-3">
+            <h4>@comic.DisplayText</h4>
+            <img src="/Images/@comic.CoverImageFileName"
+                 alt="@comic.DisplayText"
+                 class="img-responsive" />
+        </div>
+    </div>
+}
+
 
